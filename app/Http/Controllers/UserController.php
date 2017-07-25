@@ -16,6 +16,9 @@ class UserController extends Controller
         return $id;
     }
     public function store(Request $request){
+        /*
+         * El objeto derivado de FormRequest permite accesar a la informacion de la peticion tal como los datos que contiene
+         */
         $data = $request->all();
         dd($data);
     }

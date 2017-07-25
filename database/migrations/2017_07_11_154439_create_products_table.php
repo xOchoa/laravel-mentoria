@@ -14,12 +14,16 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
+            /*
+             * increments - define un entero autoincrementable indexado como llave primaria
+             * nullable() - define que al elemento es posible guardar valores nulos
+             */
             $table->increments('id');
             $table->integer('product_type_id');
             $table->string('titulo');
             $table->longText('descripcion')->nullable();
+            //Define el uso de los campos created_at & updated_at
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

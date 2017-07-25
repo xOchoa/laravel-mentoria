@@ -7,19 +7,25 @@ use Closure;
 class MyMiddle
 {
     /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param $request
+     * @param Closure $next
+     * @param $param
      * @return mixed
      */
+
     public function handle($request, Closure $next,$param)
     {
+        /*
+         * El metodo handle es ejecutado antes de ejecutar la accion
+         */
         //Filters
 
         return $next($request);
     }
-    public function terminate(){
 
+    public function terminate(){
+        /*
+         * El metodo terminate es ejecutado al terminar el render de la operacion
+         */
     }
 }
