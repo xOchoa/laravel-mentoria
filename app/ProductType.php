@@ -13,6 +13,8 @@ class ProductType extends Model
 
     protected $table = 'product_types';
 
+    protected $fillable = ['name'];
+
     /*
      * Una relacion 1:N donde producto es N, para la obtencion de sus respectivos registros relacionados se utiliza hasMany
     */
