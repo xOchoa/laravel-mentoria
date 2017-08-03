@@ -30,12 +30,12 @@ class ProductsController extends Controller
          * dado que el resultado podría tratarse de un solo elemento, es necesario utilizar el metodo "first()" para que
          * sea regresado dicho elemento
          */
-        $product = Product::find(1)->type()->first()->toArray();
+        //$product = Product::find(1)->type()->first()->toArray();
         //dd($product);
         /*
          * En caso de tratarse de multiples elementos relacionados es necesario utilizar el metodo "get()"
          */
-        $type = ProductType::find(2)->products()->get()->toArray();
+        //$type = ProductType::find(2)->products()->get()->toArray();
         //return $type;
 
         /*
