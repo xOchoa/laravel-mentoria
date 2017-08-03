@@ -33,8 +33,9 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'titulo' => 'required|exists:users,id,',
-            'descripcion' => 'required|radames'
+            'titulo' => 'required|string',
+            'descripcion' => 'nullable|string',
+            'product_type_id' => 'nullable|exists:product_types,id'
         ];
     }
 }

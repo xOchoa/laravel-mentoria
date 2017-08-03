@@ -91,6 +91,8 @@ class ProductsController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
+        $types = ProductType::all();
+        $data['types'] = $types;
         $data['product'] = $product;
         return view('products.edit',$data);
     }
@@ -102,7 +104,7 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request, $id)
+    public function update(Request $request, $id)
     {
         /*
          * Mediante una inyeccion de dependencia se manda llamar la clase ProductRequest con el objetivo de validar la
@@ -123,6 +125,7 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $product->titulo = $request->get('titulo');
         $product->descripcion = $request->get('descripcion');
+        $product->product_type_id = $request->get('product_type_id');
         /*
          * Eloquent a traves del metodo save almacenara la informacion distinguiendo en caso de insercion o actualizacion
          */
