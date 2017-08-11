@@ -125,6 +125,7 @@ class ProductsController extends Controller
         $product = Product::find($id);
         $product->titulo = $request->get('titulo');
         $product->descripcion = $request->get('descripcion');
+        $product->price = $request->get('price');
         $product->product_type_id = $request->get('product_type_id');
         /*
          * Eloquent a traves del metodo save almacenara la informacion distinguiendo en caso de insercion o actualizacion

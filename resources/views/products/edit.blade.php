@@ -23,6 +23,11 @@
                                 @if($errors->has('descripcion'))
                                     {{ $errors->first('descripcion') }}
                                 @endif
+                                <label for="">Precio</label><br>
+                                <input type="text" name="price" value="{{ $product->price }}"><br>
+                                @if($errors->has('price'))
+                                    {{ $errors->first('price') }}
+                                @endif
                                 <label for="">Tipo</label><br>
                                 <select name="product_type_id" ><br>
                                     @foreach($types as $type)

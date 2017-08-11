@@ -63,4 +63,10 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 Route::resource('/products','ProductsController');
 
+#Route::resource('/details','DetailController');
+Route::put('details/{id}', 'DetailController@update')->name('details.update');
+Route::get('details/{id}', 'DetailController@index')->name('details');
+Route::get('details/{id}/store', 'DetailController@store')->name('details.store');
+Route::get('details/{id}/delete', 'DetailController@destroy')->name('details.delete');
+
 //Route::put('products/{id}/{param2}');
